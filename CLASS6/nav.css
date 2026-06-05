@@ -1,0 +1,65 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.navbar{
+
+display:flex;
+
+align-items:center;
+
+padding:20px;
+
+border:1px solid gray;
+
+}
+
+.left,
+.right{
+
+flex:1;
+
+}
+
+.middle{
+
+display:flex;
+
+gap:30px;
+
+list-style:none;
+
+justify-content:center;
+
+flex:1;
+
+}
+
+.right{
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+Why this works:
+LEFT( flex:1 ) | MIDDLE( flex:1 ) | RIGHT( flex:1 )
+Since left and right occupy equal flex space:
+
+Logo width doesn't matter
+
+Button width doesn't matter
+
+Center always stays centered
+
+Class 6 — Engineering Thinking (2)
+Requirement:
+Instagram header:
+
+Desktop:
+
+Home Search Explore Reels Messages Notifications Create Profile
+Mobile:
+
