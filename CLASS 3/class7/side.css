@@ -1,0 +1,61 @@
+
+.dashboard{
+
+display:grid;
+
+gap:20px;
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(
+
+250px,
+
+1fr
+
+)
+
+);
+
+}
+
+.sidebar{
+
+background:lightblue;
+
+min-height:300px;
+
+}
+
+.main{
+
+background:lightgreen;
+
+min-height:300px;
+
+}
+
+.right{
+
+background:pink;
+
+min-height:300px;
+
+}
+How it behaves:
+Large screens:
+
+Sidebar | Main | Right
+Smaller:
+
+Sidebar
+Main
+Right
+No media query needed because:
+
+auto-fit + minmax()
+automatically wraps when space becomes too small.

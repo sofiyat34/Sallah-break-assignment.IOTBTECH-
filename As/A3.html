@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Utility Library</title>
+    <link rel="stylesheet" href="A3.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Array Utility Library Tester</h2>
+
+    <textarea id="inputArray" placeholder="Enter array like: 1,2,3,4"></textarea>
+
+    <select id="operation">
+        <option value="map">Map (x2)</option>
+        <option value="filter">Filter (even numbers)</option>
+        <option value="reduce">Reduce (sum)</option>
+        <option value="flat">Flat (depth 2)</option>
+    </select>
+
+    <button onclick="runOperation()">Run</button>
+
+    <h3>Result:</h3>
+    <div id="output"></div>
+
+    <hr>
+
+    <h3>Debounce / Throttle Demo</h3>
+
+    <input type="text" id="liveInput" placeholder="Type something...">
+    <p id="liveOutput"></p>
+</div>
+
+<script src="A3.js"></script>
+</body>
+</html>

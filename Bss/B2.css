@@ -1,0 +1,74 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select,
+.form-container button {
+    padding: 10px;
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    background: #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 500px;
+}
+
+.column h2 {
+    text-align: center;
+}
+
+.task-list {
+    min-height: 400px;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: grab;
+}
+
+.card.dragging {
+    opacity: 0.5;
+}
+
+.low {
+    border-left: 5px solid green;
+}
+
+.medium {
+    border-left: 5px solid orange;
+}
+
+.high {
+    border-left: 5px solid red;
+}
+
+.drop-zone {
+    background: #cce5ff;
+}

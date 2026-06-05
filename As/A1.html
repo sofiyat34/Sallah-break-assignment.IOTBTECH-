@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="A1.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <h2>Scientific Calculator</h2>
+
+        <input type="number" id="num1" placeholder="First Number">
+        <input type="number" id="num2" placeholder="Second Number (if needed)">
+
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+            <option value="sqrt">Square Root</option>
+            <option value="power">Power</option>
+            <option value="factorial">Factorial</option>
+        </select>
+
+        <button onclick="performCalculation()">Calculate</button>
+
+        <h3 id="result">Result: </h3>
+    </div>
+
+    <script src="A1.js"></script>
+</body>
+</html>
