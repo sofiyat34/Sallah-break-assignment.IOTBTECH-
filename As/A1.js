@@ -1,100 +1,78 @@
-JavaScript
+ function performCalculation() {
 
-// Pure Functions
-const add = (a, b) => a + b;
+const num1Input = document.getElementById("num1").value;
+const num2Input = document.getElementById("num2").value;
 
-const subtract = (a, b) => a - b;
+const num1 = Number(num1Input);
+const num2 = Number(num2Input);
 
-const multiply = (a, b) => a * b;
+const operation =
+document.getElementById("operation").value;
 
-const divide = (a, b) => {
-    if (b === 0) {
-        throw new Error("Cannot divide by zero");
-    }
-    return a / b;
-};
+const resultDisplay =
+document.getElementById("result");
 
-const squareRoot = (num) => {
-    if (num < 0) {
-        throw new Error(
-            "Cannot calculate square root of a negative number"
-        );
-    }
-    return Math.sqrt(num);
-};
+try {
 
-const power = (base, exponent) => Math.pow(base, exponent);
+if(num1Input===""){
+throw new Error("Enter first number");
+}
 
-const factorial = (num) => {
-    if (num < 0) {
-        throw new Error(
-            "Factorial is not defined for negative numbers"
-        );
-    }
+let result;
 
-    let result = 1;
+switch(operation){
 
-    for (let i = 2; i <= num; i++) {
-        result *= i;
-    }
+case "add":
+result = add(num1,num2);
+break;
 
-    return result;
-};
+case "subtract":
+result = subtract(num1,num2);
+break;
 
-// Higher-Order Function
-const calculate = (operation) => {
-    return (...args) => operation(...args);
-};
+case "multiply":
+result = multiply(num1,num2);
+break;
 
-// UI Function
-function performCalculation() {
-    const num1 = Number(document.getElementById("num1").value);
-    const num2 = Number(document.getElementById("num2").value);
-    const operation =
-        document.getElementById("operation").value;
+case "divide":
+result = divide(num1,num2);
+break;
 
-    const resultDisplay =
-        document.getElementById("result");
+case "sqrt":
+result = squareRoot(num1);
+break;
 
-    try {
-        let result;
+case "power":
+result = power(num1,num2);
+break;
 
-        switch (operation) {
-            case "add":
-                result = calculate(add)(num1, num2);
-                break;
+case "factorial":
 
-            case "subtract":
-                result = calculate(subtract)(num1, num2);
-                break;
+if(!Number.isInteger(num1)){
+throw new Error(
+"Factorial requires whole numbers"
+);
+}
 
-            case "multiply":
-                result = calculate(multiply)(num1, num2);
-                break;
+result = factorial(num1);
 
-            case "divide":
-                result = calculate(divide)(num1, num2);
-                break;
+break;
 
-            case "sqrt":
-                result = calculate(squareRoot)(num1);
-                break;
+default:
+throw new Error("Invalid operation");
 
-            case "power":
-                result = calculate(power)(num1, num2);
-                break;
+}
 
-            case "factorial":
-                result = calculate(factorial)(num1);
-                break;
+resultDisplay.textContent =
+`Result: ${result}`;
 
-            default:
-                throw new Error("Invalid operation");
-        }
+}
 
-        resultDisplay.textContent = `Result: ${result}`;
-    } catch (error) {
-        resultDisplay.textContent =
-            `Error: ${error.message}`;
-    }
+catch(error){
+
+resultDisplay.textContent =
+`Error: ${error.message}`;
+
+}
+
 }

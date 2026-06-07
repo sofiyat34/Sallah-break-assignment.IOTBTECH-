@@ -1,12 +1,8 @@
 1.  If a designer gives me a 5 MB PNG hero image, I would not put it directly on a production website. Hero images affect loading speed, SEO, user experience, and Core Web Vitals.
 
-Here's a practical workflow:
+Here's a how i will handle it
 
-Step 1: Ask whether PNG is actually needed
-
-First question:
-
-Does this image require transparency?
+Step 1: Ask whether PNG is actually needed and also if this image require transparency?
 
 If:
 
@@ -257,16 +253,19 @@ The goal is not "make the image smaller."
 
 The goal is "deliver the fewest bytes possible while preserving the experience."
 
-2 .. srcset tells the browser:
+QUESTION: EXPLAIN SRCSET AND HOW IT'S USE
 
-"Here are multiple versions of this image — choose the best one for this device."
+1.  srcset tells the browser that here are multiple versions of this image — choose the best one for this device.
 
 Instead of forcing everyone to download the same image, the browser picks the most appropriate size.
-3  it helps to prevent window.operner on another page
+2. it also helps to prevent window.operner on another page
 
-4... If I need to display 50 images on one page, my goal is: fast loading, low bandwidth usage, good user experience, and good Core Web Vitals.
+ENGINEERING THINKING
+ANSWER:
 
-Here's a practical optimization strategy:
+If I need to display 50 images on one page, my goal is: fast loading, low bandwidth usage, good user experience, and good Core Web Vitals.
+
+Here's how my optimization strategy would be:
 
 1. Use the Right Image Format
 Use AVIF first when supported (best compression)
@@ -281,19 +280,12 @@ Example:
   <img src="image.jpg" alt="Product">
 </picture>
 2. Resize Images Before Uploading
-
-Do not upload huge images like:
-
-❌ 4000×3000 image displayed at 300×300
-
-Instead:
-
-✅ Generate multiple sizes:
+i would generate multiple sizes of image and not use a huge size image
 
 300px
 600px
 1200px
-3. Use srcset for Responsive Images
+<<<<<<<<<<<3. Use srcset for Responsive Images
 
 This prevents mobile users from downloading desktop-sized images.
 
@@ -308,7 +300,8 @@ sizes="
 (max-width:1000px) 600px,
 1200px"
 alt="">
-4. Lazy Load Most Images
+
+1. Lazy Load Most Images
 
 Loading 50 images immediately is expensive.
 
@@ -318,7 +311,7 @@ Load only images visible on screen:
 
 This delays offscreen images.
 
-5. Prioritize Above-the-Fold Images
+2. Prioritize Above-the-Fold Images
 
 Images visible immediately should load first.
 
@@ -329,7 +322,7 @@ loading="eager">
 
 Use this only for a few important images.
 
-6. Compress Images Aggressively
+3. Compress Images Aggressively
 
 Target:
 
@@ -343,7 +336,7 @@ Even reducing from:
 
 across 50 images saves enormous bandwidth.
 
-7. Use CDN + Caching
+4. Use CDN + Caching
 
 Serve images through a CDN.
 
@@ -352,7 +345,7 @@ Benefits:
 Faster global delivery
 Browser caching
 Automatic resizing in many CDNs
-8. Prevent Layout Shift (CLS)
+5. Prevent Layout Shift (CLS)
 
 Reserve image space:
 
@@ -363,7 +356,7 @@ height="300">
 
 This stops content jumping during loading.
 
-9. Use Pagination or Infinite Scroll (Sometimes)
+6. Use Pagination or Infinite Scroll (Sometimes)
 
 If users rarely view all 50 images:
 
@@ -377,7 +370,7 @@ Load 12 → Load more → Load more
 
 or use infinite scroll.
 
-10. Consider Virtualization for Very Large Lists
+7. Consider Virtualization for Very Large Lists
 
 If hundreds/thousands of images:
 
@@ -415,7 +408,3 @@ into something closer to:
 50 optimized images ≈ 2–4MB total
 
 which is a massive difference.
- 
-
- CLASS 4
- 

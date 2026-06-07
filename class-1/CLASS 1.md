@@ -36,7 +36,7 @@ Accessibility tools often reveal these problems. Screen readers may struggle to 
 
 PRODUCT THINKING
 
-1. QUESTION: How does semantic HTML help a famous chef's blog get more traffic?
+1. QUESTION: How does semantic HTML help search engine understand and rank their content?
 
 ANSWER: Semantic HTML helps search engines understand the structure and meaning of content. If I were building a blog for a famous chef, I would use semantic elements carefully.
 
@@ -47,7 +47,7 @@ This structure helps search engines understand what content is most important. S
 Better accessibility, clearer structure, and improved search engine understanding can contribute to higher rankings and increased organic traffic. This means more visitors discovering the chef's recipes through search results.
 
 
-2.QUESTION:  Edge computing in a real-time multiplayer game.
+2.QUESTION:   what Edge computing benefit would matter most if you are building a  real time multiplayer game .
 
 ANSWER: The biggest benefit of edge computing for a real-time multiplayer game is reduced latency. Players expect actions such as movement, shooting, or interactions to happen almost instantly. If data must travel to a distant central server and back, delays can occur.
 

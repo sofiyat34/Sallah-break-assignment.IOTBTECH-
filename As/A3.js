@@ -1,10 +1,4 @@
 
-// ===============================
-// ARRAY UTILITY LIBRARY
-// No built-in map/filter/reduce/flat used
-// ===============================
-
-// 1. CUSTOM MAP
 const myMap = (array, callback) => {
     const result = [];
 
